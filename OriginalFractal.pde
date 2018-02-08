@@ -7,7 +7,7 @@ public void setup() {
 	for(int i = 10; i <= 100; i=i+10)
 	{
 		j = i;
-		oFractal(j,j,30);
+		oFractal(20+i,20+i,30,30,50);
 	}
 	
 }
@@ -18,13 +18,13 @@ public void setup() {
 	//}
 	
 //}
-public void oFractal(int x,int y,int n) {
+public void oFractal(int x,int y, int z, int a, int n) {
 	if(n<=10)
 	{
-		rect(x, y, x+n, y+n);
+		rect(x, y, z, a);
 	}
 	else
 	{
-		oFractal(x,y,n/2);
+		oFractal(x+10,y+10,z,a,n/2);
 	}
 }
