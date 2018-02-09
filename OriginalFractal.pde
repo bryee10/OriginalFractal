@@ -24,6 +24,15 @@ public void draw() {
 	//}
 	
 }
+public void mousePressed()
+{
+
+		background(0);
+		stroke(255);
+		strokeWeight(1);
+		bFractal(650,780,1,1,275,650,780);
+	
+}
 public void oFractal(float x,float y, float z, float a, float n, float k, float l) {
 	//if(n<=10)
 	//{
@@ -41,7 +50,15 @@ public void oFractal(float x,float y, float z, float a, float n, float k, float 
 	if(n>1)
 	{
 		oFractal(x+(float)(Math.sin(n)*1.5*n),y+(float)(Math.cos(n)*1.5*n),z+0.05,a+0.05,n-1,b,c);
-		//System.out.println(x+Math.sin(n)*1.5*n);
-		//System.out.println(x+Math.sin(n+1)*1.5*(n+1));
+	}
+}
+public void bFractal(float x,float y, float z, float a, float n, float k, float l) {
+	
+
+	line(k,l,x,y);
+	rect(x,y,z,a);
+	if(n>1)
+	{
+		bFractal(x+(float)(Math.sin(n)*1.5*n),y+(float)(Math.cos(n)*1.5*n),z+0.05,a+0.05,n-1,x+(float)(Math.sin(n+1)*1.5*(n+1)),y+(float)(Math.cos(n+1)*1.5*(n+1)));
 	}
 }
