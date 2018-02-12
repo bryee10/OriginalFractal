@@ -1,36 +1,49 @@
+public int j;
 public void setup() {
 	size(800,800);
 	noFill();
-	background(255,0,0);
+	background(0,0,0);
 	stroke(0);
-	strokeWeight(3);
+	strokeWeight(2);
 	oFractal(650,780,1,1,275,650,780);
 
 }
 public void draw() {
-	int j = 0;
-	
-	//for(int i = 0; i < 180; i++)
-	//{
-
-		//oFractal(380+(int)(Math.sin(i)*1.5*i),380+(int)(Math.cos(i)*1.5*i),i/30,i/30,0);
-		//System.out.println(Math.sin(i));
-		//System.out.println(i);
-		
-	//}
-	//for(int i =100; i < 200; i=i+10)
-	//{
-		//oFractal(40+i,40+i,0);
-	//}
-	
+		//frameRate(5);
+		//j++;
+		//if(j%2==0)
+		//{
+		//	background(0);
+		//	stroke(255);
+		//	strokeWeight(1);
+		//	oFractal(650,780,1,1,275,650,780);
+		//}
+		//else
+		//{
+		//	background(0,0,0);
+		//	stroke(0);
+		//	strokeWeight(2);
+		//	oFractal(650,780,1,1,275,650,780);
+		//}	
 }
 public void mousePressed()
 {
-
-		background(0);
-		stroke(255);
-		strokeWeight(1);
-		bFractal(650,780,1,1,275,650,780);
+		
+		j++;
+		if(j%2==0)
+		{
+			background(0);
+			stroke(255);
+			strokeWeight(1);
+			bFractal(650,780,1,1,275,650,780);
+		}
+		else
+		{
+			background(0,0,0);
+			stroke(0);
+			strokeWeight(2);
+			oFractal(650,780,1,1,275,650,780);
+		}
 	
 }
 public void oFractal(float x,float y, float z, float a, float n, float k, float l) {
@@ -44,6 +57,7 @@ public void oFractal(float x,float y, float z, float a, float n, float k, float 
 	//}
 	float b = x;
 	float c = y;
+	stroke(random(256),random(256),random(256));
 	line(k,l,x,y);
 	//rect(x,y,z,a);
 
@@ -54,7 +68,7 @@ public void oFractal(float x,float y, float z, float a, float n, float k, float 
 }
 public void bFractal(float x,float y, float z, float a, float n, float k, float l) {
 	
-
+	stroke(random(256),random(256),random(256));
 	line(k,l,x,y);
 	rect(x,y,z,a);
 	if(n>1)
